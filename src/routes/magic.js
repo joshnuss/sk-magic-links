@@ -68,7 +68,7 @@ export async function get({ url }) {
 		return {
 			status: 303,
 			headers: {
-				location: `/?message=user.created`
+				location: `/?message=user.signin`
 			}
 		}
 

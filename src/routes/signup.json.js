@@ -7,6 +7,15 @@ export async function post({ request }) {
 	const body = await request.formData()
 	const name = body.get('name')
 	const email = body.get('email')
+	const user = await db.user.findUnique({ where: { email } })
+
+	if (user) {
+		return {
+			status: 422,
+			body: { message: 'User already exists' }
+		}
+	}
+
 	const registration = await db.registration.create({
 		data: {
 			name,

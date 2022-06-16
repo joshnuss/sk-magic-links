@@ -5,7 +5,7 @@
   let error = ''
 
   async function submit() {
-    const response = await fetch('/signin', {
+    const response = await fetch('/signin.json', {
       method: 'POST',
       body: new URLSearchParams({
         email

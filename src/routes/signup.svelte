@@ -6,7 +6,7 @@
   let error = ''
 
   async function submit() {
-    const response = await fetch('/signup', {
+    const response = await fetch('/signup.json', {
       method: 'POST',
       body: new URLSearchParams({
         name,
